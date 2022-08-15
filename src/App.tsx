@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import { privateRoutes, publicRoutes } from "./routes";
+import { selectAuth } from "./store/Slices/authSlice";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { isAuth } = useSelector(selectAuth);
+
+    return (
+        <>
+            {!isAuth ? (
+                <Routes>
+                    {publicRoutes.map((i) => (
+                        <Route key={i.path} path={i.path} element={i.element} />
+                    ))}
+                </Routes>
+            ) : (
+                <Layout>
+                    <Routes>
+                        {privateRoutes.map((i) => (
+                            <Route
+                                key={i.path}
+                                path={i.path}
+                                element={i.element}
+                            />
+                        ))}
+                    </Routes>
+                </Layout>
+            )}
+        </>
+    );
 }
 
 export default App;
