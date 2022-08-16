@@ -5,7 +5,7 @@ import { fetchCurrentUser } from "../../api/PMService";
 import { selectAuth, setAuth } from "../../store/Slices/authSlice";
 import { useAppDispatch } from "../../store/store";
 
-const navigation = [
+const navItems = [
     {
         id: 1,
         title: "Overview",
@@ -41,11 +41,12 @@ const Nav = () => {
         if (isAuth) {
             dispatch(fetchCurrentUser({ id: isAuth.id }));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
         <nav>
-            {navigation.map((i) => (
+            {navItems.map((i) => (
                 <Link key={i.id} to={i.href}>
                     {i.title}
                 </Link>
