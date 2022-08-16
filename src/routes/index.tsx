@@ -1,4 +1,5 @@
 import { Navigate } from "react-router-dom";
+import NewProjectModal from "../pages/privatePages/NewProjectModal/NewProjectModal";
 import OverviewPage from "../pages/privatePages/OverviewPage/OverviewPage";
 import ProjectsPage from "../pages/privatePages/ProjectsPage/ProjectsPage";
 import SettingsPage from "../pages/privatePages/SettingsPage/SettingsPage";
@@ -15,6 +16,7 @@ export const publicRoutes = [
 export const privateRoutes = [
     { path: "/overview", element: <OverviewPage /> },
     { path: "/projects", element: <ProjectsPage /> },
+    { path: "/projects/new", element: <NewProjectModal /> },
     { path: "/tasks", element: <TasksPage /> },
     { path: "/settings", element: <SettingsPage /> },
     { path: "*", element: <Navigate to="/overview" replace /> },
