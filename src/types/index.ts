@@ -1,5 +1,5 @@
 export interface ITask {
-    id: string;
+    id: number;
     title: string;
     creationDate: string;
     description: string;
@@ -8,7 +8,7 @@ export interface ITask {
 }
 
 export interface IProject {
-    id: string;
+    id: number;
     title: string;
     description: string;
     notes: string;

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { DATA_API } from "../.config";
-import { IUser } from "../types";
+import { IProject, IUser } from "../types";
 
 export const fetchUsersData = createAsyncThunk(
     "users/fetchUserData",
@@ -20,3 +20,14 @@ export const fetchCurrentUser = createAsyncThunk(
         return data;
     }
 );
+
+export const postNewProject = async (
+    userId: string,
+    newProjects: IProject[]
+) => {
+    await axios
+        .put(DATA_API + `/${userId}`, { projects: newProjects })
+        .catch((error) => {
+            console.error(error);
+        });
+};
