@@ -1,10 +1,7 @@
-import { format, setDefaultOptions } from "date-fns";
-import { uk } from "date-fns/locale";
-import React from "react";
+import { format } from "date-fns";
+import { FC } from "react";
 
-const Header = () => {
-    setDefaultOptions({ locale: uk });
-
+const Header: FC = () => {
     const currentDate = format(new Date(), "EEEE, dd MMMM");
 
     return (

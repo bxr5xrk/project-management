@@ -3,18 +3,19 @@ export interface ITask {
     title: string;
     creationDate: string;
     description: string;
-    complated: boolean;
+    isComplated: boolean;
     totalTime: string;
 }
 
 export interface IProject {
     id: number;
     title: string;
+    slug: string;
     description: string;
     notes: string;
     creationDate: string;
     totalTime: string;
-    complated: boolean;
+    isComplated: boolean;
     tasks: ITask[];
 }
 
