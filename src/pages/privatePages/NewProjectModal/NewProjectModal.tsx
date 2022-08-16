@@ -24,14 +24,16 @@ const NewProjectModal: FC = () => {
 
             if (!findProjectName) {
                 messageRef.current = "success";
+
                 const newProject = {
                     id:
                         currentUser.projects[currentUser.projects.length - 1]
                             .id + 1,
-                    title: value,
+                    title: value[0].toUpperCase() + value.slice(1),
+                    slug: value.replaceAll(" ", "-").toLowerCase(),
                     description: desc,
                     notes: "",
-                    complated: false,
+                    isComplated: false,
                     totalTime: "00:00",
                     creationDate: date,
                     tasks: [],
@@ -71,6 +73,7 @@ const NewProjectModal: FC = () => {
                     placeholder="enter description"
                     onChange={(e) => setDesc(e.target.value)}
                 />
+
                 <button type="submit">create</button>
             </form>
 
