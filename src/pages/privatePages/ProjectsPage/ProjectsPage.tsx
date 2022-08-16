@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ProjectItem from "../../../components/ProjectItem/ProjectItem";
 import { selectUser } from "../../../store/Slices/userSlice";
 
 const ProjectsPage = () => {
@@ -8,13 +9,16 @@ const ProjectsPage = () => {
     return (
         <>
             <Link to="./new">+ add new</Link>
-            <div>
+            <div style={{ display: "flex" }}>
                 {currentUser &&
                     currentUser.projects.map((i) => (
-                        <div key={i.id}>
-                            <h3> {i.title}</h3>
-                            <h4>{i.description}</h4>
-                        </div>
+                        <ProjectItem
+                            key={i.id}
+                            title={i.title}
+                            description={i.description}
+                            totalTime={i.totalTime}
+                            slug={i.slug}
+                        />
                     ))}
             </div>
         </>
