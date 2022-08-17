@@ -3,46 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDebounce } from "../../hooks/useDebounce";
 import { selectUser } from "../../store/Slices/userSlice";
-import { IUser } from "../../types";
-
-const results = ({
-    currentUser,
-    debouncedValue,
-}: {
-    currentUser: IUser | null;
-    debouncedValue: string;
-}) => {
-    if (currentUser && debouncedValue.length > 2) {
-        const projects: { title: string; slug: string; id: number }[] = [];
-        currentUser.projects.map(
-            (i) =>
-                i.title.toLowerCase().includes(debouncedValue.toLowerCase()) &&
-                projects.push({ title: i.title, slug: i.slug, id: i.id })
-        );
-        const tasks: {
-            projectTitle: string;
-            title: string;
-            slug: string;
-            id: number;
-        }[] = [];
-        currentUser.projects.map((i) =>
-            i.tasks.map(
-                (j) =>
-                    j.title
-                        .toLowerCase()
-                        .includes(debouncedValue.toLowerCase()) &&
-                    tasks.push({
-                        projectTitle: i.title,
-                        title: j.title,
-                        slug: i.slug,
-                        id: i.id,
-                    })
-            )
-        );
-
-        return { projects, tasks };
-    }
-};
+import { searchResults } from "../../utils/searchResults";
 
 const Search = () => {
     const { currentUser } = useSelector(selectUser);
@@ -86,11 +47,11 @@ const Search = () => {
                         backgroundColor: "aliceblue",
                     }}
                 >
-                    {results({ currentUser, debouncedValue })?.projects
+                    {searchResults({ currentUser, debouncedValue })?.projects
                         .length ? (
                         <>
                             <h4>Projects: </h4>
-                            {results({
+                            {searchResults({
                                 currentUser,
                                 debouncedValue,
                             })?.projects.map((i) => (
@@ -109,13 +70,13 @@ const Search = () => {
                         <></>
                     )}
 
-                    {results({
+                    {searchResults({
                         currentUser,
                         debouncedValue,
                     })?.tasks.length ? (
                         <>
                             <h4>Tasks: </h4>
-                            {results({
+                            {searchResults({
                                 currentUser,
                                 debouncedValue,
                             })?.tasks.map((i) => (
