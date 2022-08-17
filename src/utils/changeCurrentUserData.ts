@@ -69,7 +69,7 @@ export const ChangeCurrentUserData = ({
                 notes: "",
                 isComplated: false,
                 totalTime: "00:00",
-                creationDate: format(new Date(), "yyyy:MM:dd"),
+                creationDate: format(new Date(), "yyyy:MM:dd:HH:mm"),
                 tasks: [],
             };
 
