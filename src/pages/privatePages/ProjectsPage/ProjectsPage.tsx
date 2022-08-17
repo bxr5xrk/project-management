@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ProjectItem from "../../../components/ProjectItem/ProjectItem";
+import SortingTypes from "../../../components/SortingTypes/SortingTypes";
 import { selectUser } from "../../../store/Slices/userSlice";
 import { sortArray } from "../../../utils/sortArray";
 
@@ -19,16 +20,11 @@ const ProjectsPage = () => {
         <>
             <Link to="./new">+ add new</Link>
 
-            <select
-                value={sortingValue}
-                onChange={(e) => setSortingValue(e.target.value)}
-            >
-                {sortingTypes.map((i) => (
-                    <option key={i.id} value={i.value}>
-                        {i.title}
-                    </option>
-                ))}
-            </select>
+            <SortingTypes
+                sortingTypes={sortingTypes}
+                sortingValue={sortingValue}
+                setSortingValue={setSortingValue}
+            />
 
             <div style={{ display: "flex" }}>
                 {currentUser &&

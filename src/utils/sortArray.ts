@@ -1,10 +1,8 @@
-import { IProject } from "../types";
-
 export const sortArray = ({
     arr,
     sortType,
 }: {
-    arr: IProject[];
+    arr: any;
     sortType: string;
 }) => {
     const sortedArr = [...arr];

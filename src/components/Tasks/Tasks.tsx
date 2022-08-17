@@ -4,15 +4,24 @@ import { selectUser, setCurrentUser } from "../../store/Slices/userSlice";
 import { useAppDispatch } from "../../store/store";
 import { IProject, ITask } from "../../types";
 import { ChangeCurrentUserData } from "../../utils/changeCurrentUserData";
+import { sortArray } from "../../utils/sortArray";
+import SortingTypes from "../SortingTypes/SortingTypes";
 
 interface TasksProps {
     tasks: ITask[];
     currentProject: IProject;
 }
 
+const sortingTypes = [
+    { value: "timeAsc", title: "sort newest to oldest", id: 1 },
+    { value: "timeDesc", title: "sort oldest to newest", id: 2 },
+    { value: "title", title: "sort by title", id: 3 },
+];
+
 const Tasks: FC<TasksProps> = ({ tasks, currentProject }) => {
     const { currentUser } = useSelector(selectUser);
     const [showModal, setShowModal] = useState(false);
+    const [sortingValue, setSortingValue] = useState(sortingTypes[0].value);
     const [value, setValue] = useState<string>("");
     const [desc, setDesc] = useState("");
     const messageRef = useRef("");
@@ -109,14 +118,27 @@ const Tasks: FC<TasksProps> = ({ tasks, currentProject }) => {
             )}
 
             {tasks.length ? (
-                tasks.map((i) => (
-                    <div key={i.id} style={{ border: "1px solid #111" }}>
-                        <button onClick={() => deleteTask(i.id)}>delete</button>
-                        <h4>{i.title}</h4>
-                        <p>{!i.isComplated ? "active" : "done"}</p>
-                        <p>totalTime: {i.totalTime}</p>
-                    </div>
-                ))
+                <>
+                    <SortingTypes
+                        sortingTypes={sortingTypes}
+                        sortingValue={sortingValue}
+                        setSortingValue={setSortingValue}
+                    />
+
+                    {sortArray({
+                        arr: tasks,
+                        sortType: sortingValue,
+                    }).map((i) => (
+                        <div key={i.id} style={{ border: "1px solid #111" }}>
+                            <button onClick={() => deleteTask(i.id)}>
+                                delete
+                            </button>
+                            <h4>{i.title}</h4>
+                            <p>{!i.isComplated ? "active" : "done"}</p>
+                            <p>totalTime: {i.totalTime}</p>
+                        </div>
+                    ))}
+                </>
             ) : (
                 <p>no tasks yet</p>
             )}
