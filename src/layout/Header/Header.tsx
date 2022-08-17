@@ -1,5 +1,6 @@
 import { format } from "date-fns";
 import { FC } from "react";
+import Search from "../../components/Search/Search";
 
 const Header: FC = () => {
     const currentDate = format(new Date(), "EEEE, dd MMMM");
@@ -8,7 +9,7 @@ const Header: FC = () => {
         <header>
             <div>logo</div>
             <h1>{currentDate}</h1>
-            <div>search</div>
+            <Search />
             <div>user</div>
         </header>
     );
