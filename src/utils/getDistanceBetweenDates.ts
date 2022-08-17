@@ -1,7 +1,6 @@
 import { format } from "date-fns";
 
 export const getDistanceBetweenDates = (receivedDate: string) => {
-    // if (currentProject) {
     const nowDateStr = format(Date.now(), "yyyy:MM:dd:HH");
     const date = {
         year: Number(nowDateStr.slice(0, 4)) - Number(receivedDate.slice(0, 4)),
@@ -33,5 +32,4 @@ export const getDistanceBetweenDates = (receivedDate: string) => {
             : `${date.day} days ago`;
 
     return `Created ${years}${months}${days}`;
-    // }
 };
