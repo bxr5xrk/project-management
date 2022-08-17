@@ -6,8 +6,9 @@ import { IProject, ITask } from "../../types";
 import { ChangeCurrentUserData } from "../../utils/changeCurrentUserData";
 import { sortArray } from "../../utils/sortArray";
 import SortingTypes from "../SortingTypes/SortingTypes";
+import TaskItem from "../TaskItem/TaskItem";
 
-interface TasksProps {
+interface TasksListProps {
     tasks: ITask[];
     currentProject: IProject;
 }
@@ -18,7 +19,7 @@ const sortingTypes = [
     { value: "title", title: "sort by title", id: 3 },
 ];
 
-const Tasks: FC<TasksProps> = ({ tasks, currentProject }) => {
+const TasksList: FC<TasksListProps> = ({ tasks, currentProject }) => {
     const { currentUser } = useSelector(selectUser);
     const [showModal, setShowModal] = useState(false);
     const [sortingValue, setSortingValue] = useState(sortingTypes[0].value);
@@ -128,15 +129,15 @@ const Tasks: FC<TasksProps> = ({ tasks, currentProject }) => {
                     {sortArray({
                         arr: tasks,
                         sortType: sortingValue,
-                    }).map((i) => (
-                        <div key={i.id} style={{ border: "1px solid #111" }}>
-                            <button onClick={() => deleteTask(i.id)}>
-                                delete
-                            </button>
-                            <h4>{i.title}</h4>
-                            <p>{!i.isComplated ? "active" : "done"}</p>
-                            <p>totalTime: {i.totalTime}</p>
-                        </div>
+                    }).map((task) => (
+                        <TaskItem
+                            key={task.id}
+                            id={task.id}
+                            title={task.title}
+                            isComplated={task.isComplated}
+                            totalTime={task.totalTime}
+                            deleteTask={deleteTask}
+                        />
                     ))}
                 </>
             ) : (
@@ -146,4 +147,4 @@ const Tasks: FC<TasksProps> = ({ tasks, currentProject }) => {
     );
 };
 
-export default Tasks;
+export default TasksList;

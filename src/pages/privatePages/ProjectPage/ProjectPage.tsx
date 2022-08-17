@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Tasks from "../../../components/Tasks/Tasks";
+import TasksList from "../../../components/TasksList/TasksList";
 import { selectUser } from "../../../store/Slices/userSlice";
 import { getDistanceBetweenDates } from "../../../utils/getDistanceBetweenDates";
 
@@ -25,7 +25,7 @@ const ProjectPage = () => {
                     <p>
                         {getDistanceBetweenDates(currentProject.creationDate)}
                     </p>
-                    <Tasks
+                    <TasksList
                         currentProject={currentProject}
                         tasks={currentProject.tasks}
                     />
