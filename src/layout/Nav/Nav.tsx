@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { fetchCurrentUser } from "../../api/PMService";
 import { selectAuth, setAuth } from "../../store/Slices/authSlice";
 import { useAppDispatch } from "../../store/store";
+import st from './Nav.module.scss'
 
 const navItems = [
     {
@@ -45,7 +46,7 @@ const Nav = () => {
     }, []);
 
     return (
-        <nav>
+        <nav className={st.root}>
             {navItems.map((i) => (
                 <Link key={i.id} to={i.href}>
                     {i.title}

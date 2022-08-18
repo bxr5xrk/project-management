@@ -39,3 +39,7 @@ article > * + * {
 input, button, textarea, select {  
 	font: inherit;
 }
+
+input {
+	all: unset;
+}

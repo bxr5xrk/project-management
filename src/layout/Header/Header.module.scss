@@ -1,0 +1,16 @@
+.root {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    align-items: center;
+
+    .user {
+        display: flex;
+        font-weight: 500;
+        font-size: 17px;
+        svg {
+            margin-left: 5px;
+        }
+    }
+}

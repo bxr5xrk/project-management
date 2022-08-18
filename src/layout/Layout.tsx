@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import Header from "./Header/Header";
 import Nav from "./Nav/Nav";
+import st from './main.module.scss'
 
 interface LayoutProps {
     children: ReactNode;
@@ -8,11 +9,11 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
     return (
-        <div>
+        <>
             <Header />
             <Nav />
-            <main>{children}</main>
-        </div>
+            <main className={st.root}>{children}</main>
+        </>
     );
 };
 
