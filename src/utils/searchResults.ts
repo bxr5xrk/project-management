@@ -30,7 +30,7 @@ export const searchResults = ({
                         projectTitle: i.title,
                         title: j.title,
                         slug: i.slug,
-                        id: i.id,
+                        id: j.id,
                     })
             )
         );
