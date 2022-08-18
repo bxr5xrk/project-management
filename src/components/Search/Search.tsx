@@ -48,7 +48,7 @@ const Search = () => {
                     }}
                 >
                     {searchResults({ currentUser, debouncedValue })?.projects
-                        .length ? (
+                        .length && (
                         <>
                             <h4>Projects: </h4>
                             {searchResults({
@@ -66,14 +66,12 @@ const Search = () => {
                                 </p>
                             ))}
                         </>
-                    ) : (
-                        <></>
                     )}
 
                     {searchResults({
                         currentUser,
                         debouncedValue,
-                    })?.tasks.length ? (
+                    })?.tasks.length && (
                         <>
                             <h4>Tasks: </h4>
                             {searchResults({
@@ -91,9 +89,12 @@ const Search = () => {
                                 </p>
                             ))}
                         </>
-                    ) : (
-                        <></>
                     )}
+
+                    {searchResults({ currentUser, debouncedValue })?.projects
+                        .length === 0 &&
+                        searchResults({ currentUser, debouncedValue })?.tasks
+                            .length === 0 && <p>Нічого не знайдено :(</p>}
                 </div>
             )}
         </div>
