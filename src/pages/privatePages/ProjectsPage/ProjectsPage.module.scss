@@ -1,0 +1,116 @@
+@import "../../../styles/variables.scss";
+
+.root {
+    display: flex;
+    flex-direction: column;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .newProject {
+            transition: all 0.3s;
+            cursor: pointer;
+            padding: 10px;
+            background-color: $primary;
+            border-radius: 50%;
+            border: 1px solid transparent;
+
+            &:hover {
+                background-color: transparent;
+                border: 1px solid $primary;
+                transform: scale(1.2);
+
+                svg {
+                    fill: $primary;
+                }
+            }
+
+            svg {
+                &:hover {
+                    fill: $primary;
+                }
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 20px;
+            border-radius: 15px;
+            color: $white;
+
+            span {
+                padding: 7px;
+                color: $primary;
+            }
+        }
+    }
+
+    .line {
+        height: 3px;
+        width: 100%;
+        background-color: $grey;
+        opacity: 0.5;
+        border-radius: 15px;
+        margin: 20px 0;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+
+        .project {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 1fr;
+            border: 1px solid $primary;
+            border-radius: 15px;
+            padding: 10px 15px;
+            gap: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h3 {
+                    display: flex;
+                    align-items: center;
+                    height: 60px;
+                }
+
+                svg {
+                    opacity: 0.4;
+                    margin-left: 8px;
+
+                    &:hover {
+                        fill: red;
+                    }
+                }
+            }
+
+            .progressLine {
+                height: 3px;
+                width: 100%;
+                background-color: $grey;
+                border-radius: 15px;
+
+                .progress {
+                    height: 3px;
+                    background-color: $primary;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+}
