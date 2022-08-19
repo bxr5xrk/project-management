@@ -6,7 +6,7 @@
 - no responsive design
 - no signIn, only logIn
 
-`auth data: name:Vasya | email:john.doe88@gmail.com | password:toor`
+`auth data: name:John | email:john.doe88@gmail.com | password:toor`
 
 ### Stack
 
