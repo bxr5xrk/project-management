@@ -7,6 +7,7 @@ import { fetchUsersData } from "../../../api/PMService";
 import { setAuth } from "../../../store/Slices/authSlice";
 import { selectUser, setCurrentUser } from "../../../store/Slices/userSlice";
 import { useAppDispatch } from "../../../store/store";
+import st from './LoginPage.module.scss'
 
 const LoginPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -73,14 +74,14 @@ const LoginPage: FC = () => {
     }, []);
 
     return (
-        <div>
-            <h2>Автентифікація</h2>
+        <div className={st.login}>
+            <h2>Authentication</h2>
 
             <form onSubmit={formik.handleSubmit}>
                 <input
                     id="userName"
                     type="text"
-                    placeholder="Введіть ваше ім'я"
+                    placeholder="enter your name"
                     value={formik.values.userName}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -91,7 +92,7 @@ const LoginPage: FC = () => {
                 <input
                     id="email"
                     type="email"
-                    placeholder="Введіть ваш емейл"
+                    placeholder="enter your email"
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -99,7 +100,7 @@ const LoginPage: FC = () => {
                 <input
                     id="password"
                     type="password"
-                    placeholder="Введіть ваш пароль"
+                    placeholder="enter password"
                     value={formik.values.password}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
