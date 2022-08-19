@@ -18,7 +18,7 @@
             padding: 10px 15px;
             border-radius: 15px;
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
         margin-bottom: 20px;
     }
@@ -83,7 +83,7 @@
             transition: all 0.3s;
 
             &:hover {
-                transform: scale(1.02);
+                transform: scale(1.01);
             }
 
             &__top {
@@ -92,6 +92,7 @@
                 align-items: center;
 
                 svg {
+                    cursor: pointer;
                     opacity: 0.5;
                 }
             }
