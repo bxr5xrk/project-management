@@ -6,6 +6,7 @@ import SortingTypes from "../../../components/SortingTypes/SortingTypes";
 import { selectUser } from "../../../store/Slices/userSlice";
 import { sortArray } from "../../../utils/sortArray";
 import st from "./ProjectsPage.module.scss";
+import CheckBox from "../../../components/CheckBox/CheckBox";
 
 const sortingTypes = [
     { value: "timeAsc", title: "sort newest to oldest", id: 1 },
@@ -16,15 +17,24 @@ const sortingTypes = [
 const ProjectsPage = () => {
     const { currentUser } = useSelector(selectUser);
     const [sortingValue, setSortingValue] = useState(sortingTypes[0].value);
+    const [checked, setChecked] = useState(false);
 
     return (
         <div className={st.root}>
             <div className={st.root__top}>
-                <SortingTypes
-                    sortingTypes={sortingTypes}
-                    sortingValue={sortingValue}
-                    setSortingValue={setSortingValue}
-                />
+                <div className={st.sorting}>
+                    <SortingTypes
+                        sortingTypes={sortingTypes}
+                        sortingValue={sortingValue}
+                        setSortingValue={setSortingValue}
+                    />
+                    <CheckBox
+                        title="Show completed"
+                        checked={checked}
+                        setChecked={setChecked}
+                    />
+                </div>
+
                 <Link to="./new" className={st.newProject}>
                     <svg
                         version="1.1"
@@ -50,6 +60,7 @@ const ProjectsPage = () => {
                     sortArray({
                         arr: currentUser.projects,
                         sortType: sortingValue,
+                        checked: checked,
                     }).map((i) => (
                         <ProjectItem
                             tasks={i.tasks}

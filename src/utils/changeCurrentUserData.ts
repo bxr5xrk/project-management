@@ -9,7 +9,6 @@ interface changeCurrentUserDataProps {
         tasks: ITask[];
         currentProject: IProject;
         value?: string;
-        desc?: string;
     };
     projectId?: number;
     currentUser: IUser | null;
@@ -86,13 +85,13 @@ export const ChangeCurrentUserData = ({
             (i: ITask) => i.title === data.value
         );
 
-        if (!findTaskName && data.value && data.desc !== undefined) {
+        if (!findTaskName && data.value) {
             const newTask = {
                 id: Date.now(),
                 title: data.value[0].toUpperCase() + data.value.slice(1),
                 creationDate: format(new Date(), "yyyy:MM:dd:HH:mm"),
                 isComplated: false,
-                description: data.desc,
+                description: "",
                 totalTime: "00:00",
             };
 

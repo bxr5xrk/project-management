@@ -63,8 +63,6 @@ const ProjectItem: FC<ProjectItemProps> = ({
         }
     };
 
-    console.log(tasks, calculateLine(tasks, "percent"));
-
     return (
         <div
             className={st.project}

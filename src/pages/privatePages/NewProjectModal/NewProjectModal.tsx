@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { selectUser, setCurrentUser } from "../../../store/Slices/userSlice";
 import { useAppDispatch } from "../../../store/store";
 import { ChangeCurrentUserData } from "../../../utils/changeCurrentUserData";
+import st from './NewProjectPage.module.scss'
 
 const NewProjectModal: FC = () => {
     const [value, setValue] = useState<string>("");
@@ -49,7 +50,7 @@ const NewProjectModal: FC = () => {
     };
 
     return (
-        <div>
+        <div className={st.root}>
             <h2>New project</h2>
 
             <form onSubmit={(e) => createNewProject(e)}>

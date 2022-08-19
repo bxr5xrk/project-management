@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../store/Slices/userSlice";
+import st from "./OverviewPage.module.scss";
 
 const OverviewPage = () => {
     const { currentUser } = useSelector(selectUser);
@@ -12,14 +13,14 @@ const OverviewPage = () => {
     };
 
     return (
-        <div>
+        <div className={st.root}>
             {currentUser && (
                 <>
-                    <div>
+                    <div className={st.item}>
                         <h4>Total projects</h4>
                         {currentUser.projects.length}
                     </div>
-                    <div>
+                    <div className={st.item}>
                         <h4>Total Tasks</h4>
                         {tasksCount()}
                     </div>

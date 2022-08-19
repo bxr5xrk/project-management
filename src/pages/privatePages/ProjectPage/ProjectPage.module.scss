@@ -1,0 +1,46 @@
+@import "../../../styles/variables.scss";
+
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .statBlocks {
+        display: flex;
+    }
+    .notes {
+        display: flex;
+        flex-direction: column;
+        background-color: $background;
+        border-radius: 15px;
+        padding: 15px;
+
+        h5 {
+            margin: 0;
+        }
+    }
+
+    .time {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        padding: 15px;
+        background-color: $background;
+        border-radius: 15px;
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+
+    h3 {
+        font-size: 30px;
+        color: $primary;
+    }
+}

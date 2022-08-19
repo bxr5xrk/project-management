@@ -1,13 +1,12 @@
 import React from "react";
 
 const SettingsPage = () => {
-
     return (
         <div>
-            Lang
-            Color Theme
+            <p>Lang</p>
+            <p>Theme</p>
         </div>
-    )
-}
+    );
+};
 
-export default SettingsPage
+export default SettingsPage;
