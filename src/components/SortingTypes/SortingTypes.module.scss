@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+.selectSort {
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary;
+
+        svg {
+            transform: rotateX(180deg);
+            fill: $primary;
+        }
+    }
+
+    svg {
+        transition: all 0.5s;
+        margin-right: 10px;
+    }
+}
