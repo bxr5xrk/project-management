@@ -24,7 +24,9 @@ ul[class], ol[class] {
 }
 
 a:not([class]) {  
-	text-decoration-skip-ink: auto;  
+	text-decoration-skip-ink: auto;
+	color: white;
+	text-decoration: none;
 }  
 
 img {  

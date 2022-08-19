@@ -8,14 +8,19 @@ body {
     color: $white;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
+    width: 100vw;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 #root {
+    padding: 10px;
     min-height: 100vh;
-    margin: 0 10px;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
+    gap: 20px 40px;
     grid-template-areas:
         ". header"
         "nav main";
