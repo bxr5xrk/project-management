@@ -1,4 +1,14 @@
-# Project management
+# TS
+
+### !!! Important !!!
+
+- some pages are incomplete
+- there is no adaptive
+- no signIn, only logIn
+
+`auth data: name:Vasya | email:john.doe88@gmail.com | password:toor`
+
+### Stack
 
 - Frontend
     - React v18 (JS)
