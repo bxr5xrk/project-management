@@ -1,5 +1,15 @@
 @import "../../styles/variables.scss";
 
+.back {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: $black;
+    opacity: .7;
+}
+
 .search {
     position: relative;
 
@@ -29,7 +39,7 @@
         margin-top: 15px;
         border-radius: $radius;
         padding: 25px;
-        background-color: rgba($black, .3);
+        background-color: $black;
         border: 1px solid $primary;
 
         .group {
