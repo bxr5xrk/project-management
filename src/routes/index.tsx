@@ -1,4 +1,5 @@
 import { Navigate } from "react-router-dom";
+import AnalyticsPage from "../pages/privatePages/AnalyticsPage/AnalyticsPage";
 import NewProjectModal from "../pages/privatePages/NewProjectModal/NewProjectModal";
 import OverviewPage from "../pages/privatePages/OverviewPage/OverviewPage";
 import ProjectPage from "../pages/privatePages/ProjectPage/ProjectPage";
@@ -20,6 +21,7 @@ export const privateRoutes = [
     { path: "/projects/project/:slugParams", element: <ProjectPage /> },
     { path: "/projects/new", element: <NewProjectModal /> },
     { path: "/tasks", element: <TasksPage /> },
+    { path: "/analytics", element: <AnalyticsPage /> },
     { path: "/settings", element: <SettingsPage /> },
     { path: "*", element: <Navigate to="/overview" replace /> },
 ];
