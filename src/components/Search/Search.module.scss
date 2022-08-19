@@ -17,6 +17,10 @@
         border: 1px solid $black;
         padding: 12px 15px;
         padding-left: 52px;
+
+        &:focus {
+            border: 1px solid $primary;
+        }
     }
 
     &__modal {
@@ -25,7 +29,8 @@
         margin-top: 15px;
         border-radius: $radius;
         padding: 25px;
-        background-color: $black;
+        background-color: rgba($black, .3);
+        border: 1px solid $primary;
 
         .group {
             margin-bottom: 10px;

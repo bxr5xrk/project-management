@@ -1,0 +1,9 @@
+@import '../styles/variables.scss';
+
+.root {
+    grid-area: main;
+    background-color: $black;
+    border-radius: $radius;
+    padding: 35px;
+    font-size: 17px;
+}

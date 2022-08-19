@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import Header from "./Header/Header";
 import Nav from "./Nav/Nav";
-import st from './main.module.scss'
+import st from './Layout.module.scss'
 
 interface LayoutProps {
     children: ReactNode;
