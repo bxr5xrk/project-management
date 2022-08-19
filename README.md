@@ -3,7 +3,7 @@
 ### !!! Important !!!
 
 - some pages are incomplete
-- there is no adaptive
+- no responsive design
 - no signIn, only logIn
 
 `auth data: name:Vasya | email:john.doe88@gmail.com | password:toor`
