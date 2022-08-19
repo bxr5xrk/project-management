@@ -1,11 +1,17 @@
-export const sortArray = ({
-    arr,
-    sortType,
-}: {
+interface sortArrayProps {
     arr: any;
     sortType: string;
-}) => {
-    const sortedArr = [...arr];
+    checked: boolean;
+}
+
+export const sortArray = ({ arr, sortType, checked }: sortArrayProps) => {
+    const sortedArr = !checked
+        ? [
+              ...arr.filter(
+                  (i: { isComplated: boolean }) => i.isComplated !== true
+              ),
+          ]
+        : [...arr];
 
     if (sortType === "title") {
         return sortedArr.sort((a, b) => a.title.localeCompare(b.title));
