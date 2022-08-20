@@ -1,0 +1,92 @@
+@import "../../../styles/variables.scss";
+
+.title {
+    padding-top: 50px;
+    text-align: center;
+
+    span {
+        background: #a74daf;
+        background: linear-gradient(to right, #a74daf 0%, #9e00af 100%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    .button {
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        border: 1px solid $primary;
+        color: $white;
+        border-radius: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100px;
+        padding: 10px;
+        margin: 0 20px;
+        transition: all 0.3s;
+
+        &:hover {
+            background-color: $primary;
+            border: 1px solid $primary;
+        }
+    }
+}
+
+.form {
+    padding: 50px 0;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .wrong {
+        font-size: 17px;
+        color: rgb(216, 66, 66);
+        font-weight: 600;
+    }
+
+    form {
+        input {
+            border: 1px solid $primary;
+            padding: 7px 10px;
+            border-radius: 15px;
+        }
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        background-color: $primary;
+        border: 1px solid $primary;
+        color: $white;
+        border-radius: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: all .3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    a {
+        text-decoration: underline;
+        color: $white;
+        border-radius: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 5px 10px;
+    }
+}
