@@ -17,7 +17,7 @@ function App() {
                     ))}
                 </Routes>
             ) : (
-                <Layout>
+                <Layout type="private">
                     <Routes>
                         {privateRoutes.map((i) => (
                             <Route
