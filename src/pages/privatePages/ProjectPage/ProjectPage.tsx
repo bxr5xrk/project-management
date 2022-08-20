@@ -10,10 +10,11 @@ import st from "./ProjectPage.module.scss";
 const ProjectPage = () => {
     const { currentUser } = useSelector(selectUser);
     const { slugParams } = useParams();
-    const [checked, setChecked] = useState(false);
-
     const currentProject =
         currentUser && currentUser.projects.find((i) => i.slug === slugParams);
+    const [checked, setChecked] = useState(
+        currentProject ? currentProject.isComplated : false
+    );
 
     return (
         <div className={st.root}>
@@ -25,7 +26,11 @@ const ProjectPage = () => {
                             <p>{currentProject.description}</p>
                         </div>
 
-                        <CheckBox title="Status" checked={checked} setChecked={setChecked} />
+                        <CheckBox
+                            title="Status"
+                            checked={checked}
+                            setChecked={setChecked}
+                        />
                     </div>
 
                     <div className={st.time}>

@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 interface IAuthData {
-    name: string;
     email: string;
     password: string;
     id: string;
