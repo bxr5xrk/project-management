@@ -21,6 +21,30 @@ export const fetchCurrentUser = createAsyncThunk(
     }
 );
 
+export const fetchNewUser = async ({
+    email,
+    name,
+    password,
+}: {
+    email: string;
+    name: string;
+    password: string;
+}) => {
+    try {
+        const newUser = {
+            email,
+            password,
+            name,
+            projects: [],
+        };
+        await axios.post<IUser>(DATA_API, {
+            ...newUser,
+        });
+    } catch (e) {
+        console.error(e);
+    }
+};
+
 export const postNewProject = async (
     userId: string,
     newProjects: IProject[]

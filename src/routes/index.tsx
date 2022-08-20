@@ -8,10 +8,12 @@ import SettingsPage from "../pages/privatePages/SettingsPage/SettingsPage";
 import TasksPage from "../pages/privatePages/TasksPage/TasksPage";
 import LandingPage from "../pages/publicPages/LandingPage/LandingPage";
 import LoginPage from "../pages/publicPages/LoginPage/LoginPage";
+import RegisterPage from "../pages/publicPages/RegisterPage/RegisterPage";
 
 export const publicRoutes = [
     { path: "/", element: <LandingPage /> },
     { path: "/login", element: <LoginPage /> },
+    { path: "/register", element: <RegisterPage /> },
     { path: "*", element: <Navigate to="/" replace /> },
 ];
 
