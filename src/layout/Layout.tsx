@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useRef } from "react";
+import { FC, ReactNode, useEffect } from "react";
 import Header from "./Header/Header";
 import Nav from "./Nav/Nav";
 import st from "./Layout.module.scss";
