@@ -1,14 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-type theme = "light" | "dark";
+type theme = "light" | "dark" | string;
 
 interface ITheme {
     theme: theme;
 }
 
+const getTheme = (): theme => {
+    const data = localStorage.getItem("theme");
+
+    return data ? data : "dark";
+};
+
 const initialState: ITheme = {
-    theme: "light",
+    theme: getTheme(),
 };
 
 const themeSlice = createSlice({

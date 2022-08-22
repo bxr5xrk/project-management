@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect } from "react";
+import { FC, ReactNode, useEffect, useRef } from "react";
 import Header from "./Header/Header";
 import Nav from "./Nav/Nav";
 import st from "./Layout.module.scss";
@@ -13,6 +13,7 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ type, children }) => {
     const { theme } = useSelector(selectTheme);
+
     useEffect(() => {
         if (theme === "dark") {
             themes.dark.map((i) =>
@@ -23,6 +24,7 @@ const Layout: FC<LayoutProps> = ({ type, children }) => {
                 document.documentElement.style.setProperty(i.variable, i.value)
             );
         }
+        localStorage.setItem("theme", theme);
     }, [theme]);
 
     return (
