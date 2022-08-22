@@ -8,7 +8,7 @@
 **Project isnt completed**
 
 working:
-
+-   theme changing
 -   logIn/signUp
 -   projects page
 -   project page
