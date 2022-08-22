@@ -1,0 +1,28 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 3s;
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text);
+        transition: all 0.3s;
+
+        svg {
+            fill: var(--text);
+        }
+
+        &:hover {
+            color: var(--primary);
+
+            svg {
+                fill: var(--primary);
+            }
+        }
+    }
+}

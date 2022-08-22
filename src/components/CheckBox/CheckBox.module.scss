@@ -1,22 +1,21 @@
-@import "../../styles/variables.scss";
-
 .status {
     position: relative;
     display: flex;
     gap: 10px;
     cursor: pointer;
+    font-weight: 500;
 
     .check {
         position: absolute;
         top: 0;
-        fill: $primary;
+        fill: var(--primary);
     }
 
     .checkbox {
         display: block;
         width: 22px;
         height: 22px;
-        border: 1px solid $primary;
+        border: 1px solid var(--primary);
         border-radius: 5px;
     }
 }

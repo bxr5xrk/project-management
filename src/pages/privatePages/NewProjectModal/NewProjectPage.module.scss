@@ -1,15 +1,13 @@
-@import "../../../styles/variables.scss";
-
 .root {
     h2 {
-        color: $primary;
+        color: var(--primary);
         text-align: center;
         margin-bottom: 20px;
     }
 
     form {
         input {
-            border: 1px solid $primary;
+            border: 1px solid var(--primary);
             padding: 7px 10px;
             border-radius: 15px;
         }
@@ -21,9 +19,9 @@
     }
 
     button {
-        background-color: $primary;
-        border: 1px solid $primary;
-        color: $white;
+        background-color: var(--primary);
+        border: 1px solid var(--primary);
+        color: var(--text);
         border-radius: 15px;
         font-weight: 600;
         cursor: pointer;

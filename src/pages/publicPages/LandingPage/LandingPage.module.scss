@@ -1,11 +1,9 @@
-@import "../../../styles/variables.scss";
-
 .title {
     padding-top: 50px;
     text-align: center;
 
     span {
-        background: #a74daf;
+        background: var(--background);
         background: linear-gradient(to right, #a74daf 0%, #9e00af 100%);
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -21,8 +19,8 @@
         text-align: center;
         text-decoration: none;
         background-color: transparent;
-        border: 1px solid $primary;
-        color: $white;
+        border: 1px solid var(--primary);
+        color: var(--text);
         border-radius: 15px;
         font-weight: 600;
         cursor: pointer;
@@ -32,8 +30,8 @@
         transition: all 0.3s;
 
         &:hover {
-            background-color: $primary;
-            border: 1px solid $primary;
+            background-color: var(--primary);
+            border: 1px solid var(--primary);
         }
     }
 }
@@ -55,7 +53,7 @@
 
     form {
         input {
-            border: 1px solid $primary;
+            border: 1px solid var(--primary);
             padding: 7px 10px;
             border-radius: 15px;
         }
@@ -67,9 +65,9 @@
     }
 
     button {
-        background-color: $primary;
-        border: 1px solid $primary;
-        color: $white;
+        background-color: var(--primary);
+        border: 1px solid var(--primary);
+        color: var(--text);
         border-radius: 15px;
         font-weight: 600;
         cursor: pointer;
@@ -83,7 +81,7 @@
 
     a {
         text-decoration: underline;
-        color: $white;
+        color: var(--text);
         border-radius: 15px;
         font-weight: 600;
         cursor: pointer;

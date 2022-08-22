@@ -17,7 +17,7 @@ const Header: FC = () => {
                 <svg
                     width="24px"
                     height="24px"
-                    fill="#fff"
+                    // fill="#fff"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                 >

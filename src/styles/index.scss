@@ -1,17 +1,21 @@
 @import "./reset.scss";
-@import "./variables.scss";
 
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background-color: $background;
-    color: $white;
+    background-color: var(--background);
+    color: var(--text);
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     width: 100vw;
     justify-content: center;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+:root {
+    --primary: #a74daf;
+    --grey: rgb(61, 61, 61);
 }
 
 .wrapper {

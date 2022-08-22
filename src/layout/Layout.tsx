@@ -1,7 +1,10 @@
-import React, { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect } from "react";
 import Header from "./Header/Header";
 import Nav from "./Nav/Nav";
 import st from "./Layout.module.scss";
+import { useSelector } from "react-redux";
+import { selectTheme } from "../store/Slices/themeSlice";
+import { themes } from "../.config";
 
 interface LayoutProps {
     children: ReactNode;
@@ -9,6 +12,19 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ type, children }) => {
+    const { theme } = useSelector(selectTheme);
+    useEffect(() => {
+        if (theme === "dark") {
+            themes.dark.map((i) =>
+                document.documentElement.style.setProperty(i.variable, i.value)
+            );
+        } else {
+            themes.light.map((i) =>
+                document.documentElement.style.setProperty(i.variable, i.value)
+            );
+        }
+    }, [theme]);
+
     return (
         <div className="wrapper">
             {type === "private" ? (

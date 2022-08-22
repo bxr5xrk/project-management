@@ -1,19 +1,14 @@
-@import "../../styles/variables.scss";
-
 .root {
     grid-area: nav;
-    color: white;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: $black;
+    background-color: var(--additionalBackground);
     padding: 20px;
-
-    border-radius: $radius;
+    border-radius: 30px;
 
     svg {
-        fill: white;
+        fill: var(--text);
         transition: all 0.3s;
     }
 
@@ -29,7 +24,7 @@
 
     .item {
         display: flex;
-        color: white;
+        color: var(--text);
         text-decoration: none;
         font-weight: 500;
         font-size: 17px;
@@ -37,10 +32,10 @@
         transition: all 0.3s;
 
         &:hover {
-            color: $primary;
+            color: var(--primary);
 
             svg {
-                fill: $primary;
+                fill: var(--primary);
             }
         }
 
@@ -49,10 +44,10 @@
         }
 
         &__active {
-            color: $primary;
+            color: var(--primary);
 
             svg {
-                fill: $primary;
+                fill: var(--primary);
             }
         }
     }

@@ -1,12 +1,10 @@
-@import '../../../styles/variables.scss';
-
 .root {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
     .item {
-        background-color: $background;
+        background-color: var(--background);
         padding: 15px;
         border-radius: 15px;
     }
